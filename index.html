@@ -48,7 +48,7 @@
         "@type": "ContactPoint",
         "telephone": "+48-33-853-62-78",
         "contactType": "secretariat",
-        "email": "skeretaria.lesnica@sp1.brenna.org.pl"
+        "email": "sekretariat.lesnica@sp1.brenna.org.pl"
       },
       "sameAs": [
         "https://www.facebook.com/sp1brenna/?locale=pl_PL"
@@ -163,7 +163,7 @@
     @scroll.window="scrolled = (window.pageYOffset > 20)">
 
     <!-- Sticky Navigation Bar -->
-    <nav :class="scrolled ? 'bg-mountain-dark/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'"
+    <nav :class="scrolled ? 'bg-slate-800/95 backdrop-blur-md shadow-lg py-1' : 'bg-transparent py-2'"
         class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent"
         :class="{ 'border-white/10': !scrolled }">
         <div class="container mx-auto px-4 flex justify-between items-center">
@@ -171,7 +171,7 @@
             <!-- Logo -->
             <a href="#" class="flex items-center gap-2">
                 <img src="assets/logo.png" alt="takdlalesnicy.pl"
-                    class="h-16 md:h-24 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform">
+                    class="h-20 md:h-32 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform">
             </a>
 
             <!-- Desktop Menu -->
@@ -206,7 +206,7 @@
             x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 -translate-y-2"
-            class="xl:hidden absolute top-full left-0 w-full bg-mountain-dark/98 backdrop-blur-xl border-t border-white/10 shadow-2xl flex flex-col p-6 gap-5 text-center overflow-y-auto max-h-[85vh] z-[60]">
+            class="xl:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-white/10 shadow-2xl flex flex-col p-6 gap-5 text-center overflow-y-auto max-h-[85vh] z-[60]">
 
             <a href="#o-projekcie" @click="mobileMenuOpen = false"
                 class="text-white text-lg font-medium hover:text-yellow-400 transition-colors py-2">O projekcie</a>
@@ -306,7 +306,8 @@
                 </div>
 
                 <!-- Microcopy -->
-                <p class="text-xs text-gray-300 mt-4 max-w-md text-center sm:text-left opacity-70">
+                <p
+                    class="text-xs text-white mt-4 max-w-md text-center sm:text-left bg-black/40 backdrop-blur-sm p-3 rounded-lg inline-block">
                     * Inicjatywa społeczna rodziców i mieszkańców Leśnicy przy wsparciu Gminy Brenna.
                 </p>
 
@@ -865,7 +866,7 @@
                             <label for="location"
                                 class="block text-sm font-bold text-slate-700 mb-2">Miejscowość</label>
                             <select id="location" name="location"
-                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-mountain-dark focus:ring-2 focus:ring-mountain-dark/20 outline-none transition bg-white">
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-mountain-dark focus:ring-2 focus:ring-mountain-dark/20 outline-none transition bg-white text-base md:text-lg cursor-pointer">
                                 <option value="Lesnica">Brenna Leśnica</option>
                                 <option value="Gorki">Górki</option>
                                 <option value="Bcentrum">Brenna Centrum</option>
@@ -904,9 +905,9 @@
                             class="flex items-center justify-center gap-2 text-slate-500 hover:text-mountain-dark transition bg-slate-50 px-4 py-2 rounded-lg">
                             📞 33 853 62 78
                         </a>
-                        <a href="mailto:skeretaria.lesnica@sp1.brenna.org.pl"
+                        <a href="mailto:sekretariat.lesnica@sp1.brenna.org.pl"
                             class="flex items-center justify-center gap-2 text-slate-500 hover:text-mountain-dark transition bg-slate-50 px-4 py-2 rounded-lg">
-                            📧 skeretaria.lesnica@sp1.brenna.org.pl
+                            📧 sekretariat.lesnica@sp1.brenna.org.pl
                         </a>
                     </div>
                 </div>
@@ -1042,7 +1043,7 @@
             <div class="inline-block bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                 <p class="text-sm font-bold text-slate-700 mb-1">Chcesz zostać partnerem?</p>
                 <div class="flex gap-4 justify-center text-sm">
-                    <a href="mailto:skeretaria.lesnica@sp1.brenna.org.pl"
+                    <a href="mailto:sekretariat.lesnica@sp1.brenna.org.pl"
                         class="text-mountain-green hover:underline">Napisz e-mail</a>
                     <span class="text-slate-300">|</span>
                     <a href="https://www.facebook.com/sp1brenna/?locale=pl_PL"
@@ -1116,7 +1117,7 @@
                     <p>Inicjatywa społeczna na rzecz rozwoju SP1 Brenna Leśnica.</p>
                 </div>
                 <div class="flex gap-6">
-                    <a href="mailto:skeretaria.lesnica@sp1.brenna.org.pl"
+                    <a href="mailto:sekretariat.lesnica@sp1.brenna.org.pl"
                         class="hover:text-white transition">Kontakt</a>
                     <a href="https://www.facebook.com/sp1brenna/?locale=pl_PL"
                         class="hover:text-white transition">Facebook</a>
