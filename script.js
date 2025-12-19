@@ -29,15 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Determine missing count for logic (0) but we won't show it in the standard way
                 statusContainer.innerHTML = `
                     <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
-                    <span class="text-green-400 font-bold">Mamy to! (${CURRENT_DECLARATIONS}/${GOAL})</span>
-                    <span class="text-sm text-blue-200 ml-2 hidden sm:inline">- Klasa startuje! Rekrutacja trwa - dołącz do nas!</span>
+                    <span class="text-green-400 font-bold">Minimum (14) osiągnięte!</span>
+                    <span class="text-sm text-blue-200 ml-2 hidden sm:inline">- Klasa startuje! Rekrutujemy dalej.</span>
                 `;
             }
             if (heroSuccessBar) {
                 heroSuccessBar.innerHTML = `
                     <div class="inline-flex items-center gap-3 bg-green-500 text-white px-5 py-2 rounded-full shadow-lg border border-green-400/50 animate-fade-in-up backdrop-blur-md">
                         <span class="w-3 h-3 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
-                        <span class="font-bold text-sm md:text-base tracking-wide uppercase">Mamy to! (${CURRENT_DECLARATIONS}/${GOAL}) – Klasa startuje! Rekrutacja trwa.</span>
+                        <span class="font-bold text-sm md:text-base tracking-wide uppercase">Minimum (${CURRENT_DECLARATIONS}) osiągnięte! Klasa startuje! Rekrutujemy dalej.</span>
                     </div>
                 `;
             }
