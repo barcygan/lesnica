@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Configuration ---
     const GOAL = 14;
-    const CURRENT_DECLARATIONS = 11; // Updated placeholder based on request
+    const CURRENT_DECLARATIONS = 14;
     const GOOGLE_FORMS_URL = ""; // Placeholder for Google Forms Action URL
     // ---------------------
 
@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const progressBar = document.getElementById('recruit-progress-bar');
         const currentDisplay = document.getElementById('current-count-display');
         const missingDisplay = document.getElementById('missing-count-display');
+        const statusContainer = document.getElementById('status-container');
+        const heroSuccessBar = document.getElementById('hero-success-bar');
 
-        if (!progressBar || !currentDisplay || !missingDisplay) return;
+        if (!progressBar || !currentDisplay) return;
 
         // Calculate percentage
         let percentage = (CURRENT_DECLARATIONS / GOAL) * 100;
@@ -21,8 +23,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update displays
         currentDisplay.textContent = CURRENT_DECLARATIONS;
 
-        let missing = Math.max(0, GOAL - CURRENT_DECLARATIONS);
-        missingDisplay.textContent = missing;
+        // Handle "Goal Reached" State
+        if (CURRENT_DECLARATIONS >= GOAL) {
+            if (statusContainer) {
+                // Determine missing count for logic (0) but we won't show it in the standard way
+                statusContainer.innerHTML = `
+                    <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
+                    <span class="text-green-400 font-bold">Mamy to! (${CURRENT_DECLARATIONS}/${GOAL})</span>
+                    <span class="text-sm text-blue-200 ml-2 hidden sm:inline">- Klasa startuje! Rekrutacja trwa - dołącz do nas!</span>
+                `;
+            }
+            if (heroSuccessBar) {
+                heroSuccessBar.innerHTML = `
+                    <div class="inline-flex items-center gap-3 bg-green-500 text-white px-5 py-2 rounded-full shadow-lg border border-green-400/50 animate-fade-in-up backdrop-blur-md">
+                        <span class="w-3 h-3 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+                        <span class="font-bold text-sm md:text-base tracking-wide uppercase">Mamy to! (${CURRENT_DECLARATIONS}/${GOAL}) – Klasa startuje! Rekrutacja trwa.</span>
+                    </div>
+                `;
+            }
+            // Make progress bar green and full
+            progressBar.classList.remove('bg-gradient-to-r', 'from-green-500', 'to-green-400', 'from-yellow-400', 'to-orange-500'); // Remove all gradient-related classes
+            progressBar.classList.add('bg-green-400');
+            progressBar.style.backgroundColor = '#4ade80'; // Force Green-400
+            progressBar.style.backgroundImage = 'none'; // Ensure no gradient overrides it
+            progressBar.style.boxShadow = "0 0 25px rgba(74, 222, 128, 0.9)"; // Stronger neon glow
+        } else {
+            // Standard State
+            if (missingDisplay) {
+                let missing = Math.max(0, GOAL - CURRENT_DECLARATIONS);
+                missingDisplay.textContent = missing;
+            }
+        }
 
         // Animate width with a slight delay
         setTimeout(() => {
