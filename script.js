@@ -27,17 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (CURRENT_DECLARATIONS >= GOAL) {
             if (statusContainer) {
                 // Determine missing count for logic (0) but we won't show it in the standard way
+                statusContainer.classList.add('animate-heartbeat', 'origin-left'); // Add heartbeat to the whole container
                 statusContainer.innerHTML = `
-                    <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
+                    <span class="relative flex h-3 w-3 mr-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
                     <span class="text-green-400 font-bold">Minimum (14) osiągnięte!</span>
                     <span class="text-sm text-blue-200 ml-2 hidden sm:inline">- Klasa startuje! Rekrutujemy dalej.</span>
                 `;
             }
             if (heroSuccessBar) {
                 heroSuccessBar.innerHTML = `
-                    <div class="inline-flex items-center gap-3 bg-green-500 text-white px-5 py-2 rounded-full shadow-lg border border-green-400/50 animate-fade-in-up backdrop-blur-md">
-                        <span class="w-3 h-3 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
-                        <span class="font-bold text-sm md:text-base tracking-wide uppercase">Minimum (${CURRENT_DECLARATIONS}) osiągnięte! Klasa startuje! Rekrutujemy dalej.</span>
+                    <div class="inline-flex items-center gap-3 bg-green-500 text-white px-5 py-2 rounded-full shadow-lg border border-green-400/50 animate-heartbeat backdrop-blur-md">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                        </span>
+                        <span class="font-bold text-sm md:text-base tracking-wide uppercase drop-shadow-md">Minimum (${CURRENT_DECLARATIONS}) osiągnięte! Klasa startuje! Rekrutujemy dalej.</span>
                     </div>
                 `;
             }

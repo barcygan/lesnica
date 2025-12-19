@@ -1,7 +1,10 @@
 :root {
-    --primary-color: #0056b3; /* Deep Blue - Trust/Mountains */
-    --secondary-color: #00a8e8; /* Sky Blue */
-    --accent-color: #e63946; /* Energetic Red - CTA */
+    --primary-color: #0056b3;
+    /* Deep Blue - Trust/Mountains */
+    --secondary-color: #00a8e8;
+    /* Sky Blue */
+    --accent-color: #e63946;
+    /* Energetic Red - CTA */
     --text-color: #333;
     --bg-light: #f4f9ff;
     --white: #ffffff;
@@ -24,7 +27,10 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     font-weight: 800;
     margin-bottom: 0.5em;
@@ -119,7 +125,7 @@ a {
     z-index: 1000;
     transform: translateY(-100%);
     transition: transform 0.4s ease-in-out;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sticky-bar.visible {
@@ -146,12 +152,15 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('https://placehold.co/1920x1080/0056b3/ffffff?text=G%C3%B3ry+%2F+Dzieci'); /* Placeholder */
+    background-image: url('https://placehold.co/1920x1080/0056b3/ffffff?text=G%C3%B3ry+%2F+Dzieci');
+    /* Placeholder */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallaxish */
+    background-attachment: fixed;
+    /* Parallaxish */
     color: var(--white);
-    padding-top: 60px; /* Space for sticky bar if needed */
+    padding-top: 60px;
+    /* Space for sticky bar if needed */
 }
 
 .hero-bg-overlay {
@@ -160,7 +169,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
 }
 
 .hero-content {
@@ -183,7 +192,7 @@ a {
 
 .hero h1 {
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 15px;
 }
 
@@ -205,9 +214,11 @@ a {
     .hero h1 {
         font-size: 4rem;
     }
+
     .hero-sub {
         font-size: 1.5rem;
     }
+
     .hero-cta-group {
         flex-direction: row;
         justify-content: center;
@@ -219,7 +230,8 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    margin-top: -50px; /* Overlap hero */
+    margin-top: -50px;
+    /* Overlap hero */
     position: relative;
     z-index: 10;
     margin-bottom: 80px;
@@ -235,7 +247,7 @@ a {
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.3s;
 }
@@ -309,7 +321,8 @@ a {
 }
 
 .benefit-list li .check {
-    color: var(--primary-color); /* Greenish check or primary blue */
+    color: var(--primary-color);
+    /* Greenish check or primary blue */
     font-weight: bold;
     margin-right: 10px;
     min-width: 20px;
@@ -349,7 +362,7 @@ a {
 }
 
 .tag {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 8px 16px;
     border-radius: 30px;
     font-size: 0.9rem;
@@ -373,7 +386,7 @@ a {
     background: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
 }
 
@@ -396,7 +409,8 @@ a {
 .progress-bar-fill {
     background: linear-gradient(90deg, #ff9f1c, var(--accent-color));
     height: 100%;
-    width: 0%; /* JS will animate this */
+    width: 0%;
+    /* JS will animate this */
     transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
     position: relative;
 }
@@ -408,16 +422,14 @@ a {
     left: 0;
     bottom: 0;
     right: 0;
-    background-image: linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.15) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.15) 50%,
-        rgba(255, 255, 255, 0.15) 75%,
-        transparent 75%,
-        transparent
-    );
+    background-image: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.15) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.15) 50%,
+            rgba(255, 255, 255, 0.15) 75%,
+            transparent 75%,
+            transparent);
     background-size: 40px 40px;
     animation: move-stripes 2s linear infinite;
 }
@@ -461,7 +473,7 @@ a {
     background: var(--white);
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .form-container h2 {
@@ -538,13 +550,14 @@ a {
     border-radius: 10px;
     padding: 15px 20px;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
 .faq-item summary {
     font-weight: 600;
     font-family: var(--font-heading);
-    list-style: none; /* Remove default triangle in some browsers */
+    list-style: none;
+    /* Remove default triangle in some browsers */
     position: relative;
     padding-right: 30px;
 }
@@ -655,15 +668,35 @@ footer {
 }
 
 /* --- Animations --- */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    }
+}
+
+.animate-heartbeat {
+    animation: heartbeat 2s infinite;
 }
 
 @keyframes move-stripes {
-    0% { background-position: 0 0; }
-    100% { background-position: 40px 40px; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 40px 40px;
+    }
 }
 
 .fade-in {
