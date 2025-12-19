@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (CURRENT_DECLARATIONS >= GOAL) {
             if (statusContainer) {
                 // Determine missing count for logic (0) but we won't show it in the standard way
-                statusContainer.classList.add('animate-heartbeat', 'origin-left'); // Add heartbeat to the whole container
+                statusContainer.classList.add('animate-heartbeat', 'origin-left', 'flex-wrap', 'justify-center', 'md:justify-start'); // Add flex-wrap for mobile
                 statusContainer.innerHTML = `
                     <span class="relative flex h-3 w-3 mr-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                     </span>
                     <span class="text-green-400 font-bold">Minimum (14) osiągnięte!</span>
-                    <span class="text-sm text-blue-200 ml-2 hidden sm:inline">- Klasa startuje! Rekrutujemy dalej.</span>
+                    <span class="text-sm text-blue-200 w-full sm:w-auto mt-1 sm:mt-0 sm:ml-2 block sm:inline">- Klasa startuje! Rekrutujemy dalej.</span>
                 `;
             }
             if (heroSuccessBar) {
