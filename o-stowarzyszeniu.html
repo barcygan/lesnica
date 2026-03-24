@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Stowarzyszeniu | SP1 Brenna Leśnica</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <meta name="description"
+        content="Poznaj Stowarzyszenie Rodziców SP1 Brenna Leśnica. Budujemy szkołę górską naszych marzeń! Sprawdź zarząd, statut i nasze cele statutowe.">
+    <meta name="keywords"
+        content="stowarzyszenie, organizacja, statut, zarząd, SP1 Brenna Leśnica, rodzice">
+    <meta name="author" content="Stowarzyszenie Rodziców SP1 Brenna Leśnica">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://takdlalesnicy.pl/o-stowarzyszeniu.html">
+    <meta property="og:title" content="O Stowarzyszeniu | SP1 Brenna Leśnica">
+    <meta property="og:description"
+        content="Poznaj Stowarzyszenie Rodziców SP1 Brenna Leśnica. Budujemy szkołę górską naszych marzeń!">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mountain: {
+                            dark: '#1e3a8a',
+                            green: '#15803d',
+                            light: '#f0f9ff',
+                        },
+                        wood: '#78350f',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- JSON-LD Structured Data for Association -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Stowarzyszenie Tak Dla Leśnicy SP1 Brenna Leśnica",
+      "url": "https://takdlalesnicy.pl/o-stowarzyszeniu.html",
+      "logo": "https://takdlalesnicy.pl/assets/logo.png",
+      "description": "Inicjatywa wspierająca Szkołę Górską w Brennej Leśnicy. Organizujemy zbiórkę na ściankę wspinaczkową i doposażenie klas sportowych.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "kontakt@takdlalesnicy.pl",
+        "contactType": "customer support"
+      }
+    }
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-800" x-data="{ scrolled: false, mobileMenuOpen: false }"
+    @scroll.window="scrolled = (window.pageYOffset > 20)">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex flex-col transition-all duration-300"
+        :class="{'shadow-lg': scrolled}">
+        <div :class="scrolled ? 'bg-slate-800/95 backdrop-blur-md py-1' : 'bg-slate-900/80 backdrop-blur-sm py-2'"
+            class="w-full transition-all duration-300 border-b border-white/10 relative z-50">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <a href="index" class="flex items-center gap-2">
+                    <img src="assets/logo.png" alt="takdlalesnicy.pl"
+                        class="h-16 md:h-24 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform">
+                </a>
+                <div class="hidden xl:flex items-center gap-5 text-white text-sm font-semibold">
+                    <a href="o-stowarzyszeniu" class="text-yellow-400 transition-colors">O Stowarzyszeniu</a>
+                    <a href="scianka" class="hover:text-yellow-400 transition-colors">Zbiórka na Ściankę</a>
+                    <a href="klasa-sportowa" class="hover:text-yellow-400 transition-colors">Klasa Sportowa</a>
+                    <a href="kontakt" class="hover:text-yellow-400 transition-colors">Kontakt</a>
+                </div>
+                <!-- Mobile button omitted for brevity but should be here -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="xl:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="mobileMenuOpen" style="display: none;"
+            class="xl:hidden absolute top-full left-0 w-full bg-slate-900 border-t-4 border-mountain-green shadow-2xl flex flex-col p-6 gap-5 text-center">
+            <a href="o-stowarzyszeniu" class="text-white text-lg font-medium text-yellow-400 py-2">O Stowarzyszeniu</a>
+            <a href="scianka" class="text-white text-lg font-medium hover:text-yellow-400 py-2">Zbiórka na Ściankę</a>
+            <a href="klasa-sportowa" class="text-white text-lg font-medium hover:text-yellow-400 py-2">Klasa Sportowa</a>
+            <a href="kontakt" class="text-white text-lg font-medium hover:text-yellow-400 py-2">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main>
+        <!-- Hero Section wzorowana na HP -->
+        <header class="relative pt-32 pb-20 md:pt-40 md:pb-28 flex items-center justify-center overflow-hidden bg-mountain-dark text-white">
+            <div class="absolute inset-0 z-0">
+                <img src="assets/hero_bg.png" alt="Góry i las" class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-t from-mountain-dark via-mountain-dark/80 to-transparent"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+                <span class="bg-mountain-green/20 text-mountain-green border border-mountain-green/30 font-bold px-4 py-1 rounded-full text-sm mb-6 inline-block uppercase tracking-wider shadow-lg backdrop-blur-sm">O nas</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 font-heading drop-shadow-md">Stowarzyszenie Tak Dla Leśnicy</h1>
+                <p class="text-xl md:text-2xl text-slate-300 leading-relaxed drop-shadow">
+                    Tworzymy ramy prawne i organizacyjne dla rozwoju Szkoły Podstawowej nr 1 w Brennej Leśnicy.
+                </p>
+            </div>
+            
+            <!-- Dekoracyjna fala na dole -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+                <svg class="relative block w-[calc(100%+1.3px)] h-[50px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-slate-50"></path>
+                </svg>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-4 max-w-5xl py-20">
+            <!-- Nasza Misja -->
+            <section class="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-20 border-t-8 border-mountain-green relative z-20 -mt-20">
+                <h2 class="text-3xl font-bold text-mountain-dark mb-6 flex items-center gap-3">
+                    <span class="text-mountain-green text-4xl">🎯</span> Nasza Misja
+                </h2>
+                <div class="prose prose-lg text-slate-700 max-w-none">
+                    <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+                        Stowarzyszenie wywodzi się z nieformalnej inicjatywy społecznej <strong>"TAK dla Leśnicy"</strong>. Po wielu sukcesach, otwarciu klasy sportowej i przekonaniu władz gminy do zachowania szkoły, rodzice postanowili ustrukturyzować swoje działania powołując prężnie działające NGO.
+                    </p>
+                    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-orange-500">
+                        <p class="m-0 font-medium text-slate-800">
+                            Głównym celem stowarzyszenia jest finansowanie, inicjowanie i organizacja wsparcia w zakresie zajęć sportowych, przyrodniczych oraz infrastruktury szkolnej w SP1 Brenna Leśnica. Dążymy do pełnej realizacji wizji Szkoły "Leśno-Górskiej".
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Organy -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <span class="bg-blue-100 text-blue-800 font-bold px-4 py-1 rounded-full text-xs inline-block uppercase tracking-wider mb-4">Reprezentacja</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-mountain-dark">Zarząd Stowarzyszenia</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- Prezes -->
+                    <div class="bg-white p-8 rounded-3xl text-center shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+                        <div class="w-24 h-24 bg-mountain-dark text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-md">👩‍💼</div>
+                        <h3 class="font-bold text-xl text-mountain-dark mb-1">Ewa Gawlas</h3>
+                        <p class="text-sm text-mountain-green uppercase tracking-widest font-bold">Prezes</p>
+                    </div>
+                    <!-- Wiceprezes -->
+                    <div class="bg-white p-8 rounded-3xl text-center shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+                        <div class="w-24 h-24 bg-mountain-dark text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-md">👩‍💼</div>
+                        <h3 class="font-bold text-xl text-mountain-dark mb-1">Karina Chrapek</h3>
+                        <p class="text-sm text-mountain-green uppercase tracking-widest font-bold">Wiceprezes</p>
+                    </div>
+                    <!-- Członek zarządu -->
+                    <div class="bg-white p-8 rounded-3xl text-center shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+                        <div class="w-24 h-24 bg-mountain-dark text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-md">👨‍💼</div>
+                        <h3 class="font-bold text-xl text-mountain-dark mb-1">Tomasz Dybczyński</h3>
+                        <p class="text-sm text-mountain-green uppercase tracking-widest font-bold">Członek Zarządu</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dokumenty -->
+            <section class="bg-mountain-dark text-white p-10 md:p-12 rounded-3xl text-center shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <span class="text-9xl">📄</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-4">Dokumenty do pobrania</h2>
+                    <p class="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">Zapoznaj się z pełną treścią naszego regulaminu i statutu.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#" class="bg-white text-mountain-dark hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-3">
+                            <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd" /></svg>
+                            Statut Stowarzyszenia (PDF)
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t-4 border-mountain-green text-slate-400 py-12 relative z-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
+                <!-- Branding -->
+                <div class="md:col-span-2">
+                    <img src="assets/logo.png" alt="takdlalesnicy.pl" class="h-24 mx-auto md:mx-0 mb-4 opacity-90 drop-shadow">
+                    <p class="text-sm border-white/10 text-slate-400 mt-2">
+                        Społeczna inicjatywa rodziców na rzecz wsparcia rozwoju Szkoły Podstawowej nr 1 w Brennej Leśnicy.
+                    </p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Informacje</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="o-stowarzyszeniu" class="hover:text-mountain-green transition">O Stowarzyszeniu</a></li>
+                        <li><a href="scianka" class="hover:text-mountain-green transition">Zbiórka na ściankę</a></li>
+                        <li><a href="klasa-sportowa" class="hover:text-mountain-green transition">Klasa Sportowa</a></li>
+                        <li><a href="kontakt" class="hover:text-mountain-green transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Mini -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-center md:justify-start gap-2"><svg class="w-4 h-4 text-mountain-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> <a href="mailto:kontakt@takdlalesnicy.pl" class="hover:text-mountain-green transition">kontakt@takdlalesnicy.pl</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 text-sm flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2026 Stowarzyszenie SP1 Brenna Leśnica. Budujemy dla dzieci!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

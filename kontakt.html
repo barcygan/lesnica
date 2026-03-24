@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Stowarzyszenie SP1 Brenna Leśnica</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <meta name="description"
+        content="Skontaktuj się ze Stowarzyszeniem Rodziców SP1 Brenna Leśnica. Współpracuj z nami dla dobra dzieci.">
+    <meta name="keywords" content="kontakt, email, formularz kontaktowy, numer bankowy, stowarzyszenie">
+    <meta name="author" content="Stowarzyszenie Rodziców SP1 Brenna Leśnica">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mountain: {
+                            dark: '#1e3a8a',
+                            green: '#15803d',
+                            light: '#f0f9ff',
+                        },
+                        wood: '#78350f',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800" x-data="{ scrolled: false, mobileMenuOpen: false }"
+    @scroll.window="scrolled = (window.pageYOffset > 20)">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex flex-col transition-all duration-300"
+        :class="{'shadow-lg': scrolled}">
+        <div :class="scrolled ? 'bg-slate-800/95 backdrop-blur-md py-1' : 'bg-slate-900/80 backdrop-blur-sm py-2'"
+            class="w-full transition-all duration-300 border-b border-white/10 relative z-50">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <a href="index" class="flex items-center gap-2">
+                    <img src="assets/logo.png" alt="takdlalesnicy.pl"
+                        class="h-16 md:h-24 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform">
+                </a>
+                <div class="hidden xl:flex items-center gap-5 text-white text-sm font-semibold">
+                    <a href="o-stowarzyszeniu" class="hover:text-yellow-400 transition-colors">O Stowarzyszeniu</a>
+                    <a href="scianka" class="hover:text-yellow-400 transition-colors">Zbiórka na Ściankę</a>
+                    <a href="klasa-sportowa" class="hover:text-yellow-400 transition-colors">Klasa Sportowa</a>
+                    <a href="kontakt" class="text-yellow-400 transition-colors">Kontakt</a>
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="xl:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" style="display: none;"
+            class="xl:hidden absolute top-full left-0 w-full bg-slate-900 border-t-4 border-mountain-green shadow-2xl flex flex-col p-6 gap-5 text-center">
+            <a href="o-stowarzyszeniu" class="text-white text-lg font-medium hover:text-yellow-400 py-2">O Stowarzyszeniu</a>
+            <a href="scianka" class="text-white text-lg font-medium hover:text-yellow-400 py-2">Zbiórka na Ściankę</a>
+            <a href="klasa-sportowa" class="text-white text-lg font-medium hover:text-yellow-400 py-2">Klasa Sportowa</a>
+            <a href="kontakt" class="text-white text-lg font-medium text-yellow-400 py-2">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-mountain-dark mb-4 font-heading">Bądźmy w kontakcie!</h1>
+                <p class="text-xl text-slate-600">Masz pytania dotyczące stowarzyszenia, zbiórki lub klasy sportowej? Napisz do nas w mgnieniu oka.</p>
+            </div>
+
+            <div class="flex flex-col gap-12 max-w-3xl mx-auto">
+                
+                <!-- Dane kontaktowe -->
+                <div class="w-full space-y-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center">
+                        <div class="w-20 h-20 bg-mountain-green/10 text-mountain-green rounded-full flex items-center justify-center text-3xl mx-auto mb-6">✉️</div>
+                        <h3 class="text-2xl font-bold text-mountain-dark mb-4 border-slate-100">Napisz do nas</h3>
+                        <p class="text-slate-600 mb-6">Jesteśmy w trakcie przygotowywania oficjalnego formularza kontaktowego. Tymczasem zapraszamy do kontaktu bezpośrednio na nasz adres mailowy:</p>
+                        
+                        <a href="mailto:kontakt@takdlalesnicy.pl" class="inline-block text-xl md:text-2xl text-mountain-green hover:text-green-700 font-bold mb-8 transition">kontakt@takdlalesnicy.pl</a>
+
+                        <div class="pt-8 border-t border-slate-100 text-center">
+                            <span class="block text-sm text-slate-500 font-bold mb-2">Adres korespondencyjny stowarzyszenia:</span>
+                            <span class="text-slate-800 text-lg">SP1 Brenna Leśnica<br>ul. Przykładowa 12</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 p-8 rounded-3xl shadow-lg border border-orange-100 text-center">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4 flex items-center justify-center gap-2"><span>💸</span> Wsparcie Finansowe</h3>
+                        <p class="text-sm text-slate-600 mb-4">Wpłać darowiznę na nasze cele statutowe. Pamiętaj, że możesz odliczyć ją od dochodu lub przekazać 1.5% KRS.</p>
+                        <p class="font-bold text-slate-800 text-sm italic mt-4">Numer konta do wpłat darowizn zostanie opublikowany wkrótce, po zakończeniu formalności rejestracyjnych.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t-4 border-mountain-green text-slate-400 py-12 relative z-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
+                <!-- Branding -->
+                <div class="md:col-span-2">
+                    <img src="assets/logo.png" alt="takdlalesnicy.pl" class="h-24 mx-auto md:mx-0 mb-4 opacity-90 drop-shadow">
+                    <p class="text-sm border-white/10 text-slate-400 mt-2">
+                        Społeczna inicjatywa rodziców na rzecz wsparcia rozwoju Szkoły Podstawowej nr 1 w Brennej Leśnicy.
+                    </p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Informacje</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="o-stowarzyszeniu" class="hover:text-mountain-green transition">O Stowarzyszeniu</a></li>
+                        <li><a href="scianka" class="hover:text-mountain-green transition">Zbiórka na ściankę</a></li>
+                        <li><a href="klasa-sportowa" class="hover:text-mountain-green transition">Klasa Sportowa</a></li>
+                        <li><a href="kontakt" class="hover:text-mountain-green transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Mini -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-center md:justify-start gap-2"><svg class="w-4 h-4 text-mountain-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> <a href="mailto:kontakt@takdlalesnicy.pl" class="hover:text-mountain-green transition">kontakt@takdlalesnicy.pl</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 text-sm flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2026 Stowarzyszenie SP1 Brenna Leśnica. Budujemy dla dzieci!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
