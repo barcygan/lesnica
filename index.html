@@ -841,96 +841,7 @@
 
 
     <!-- Contact Form Section -->
-    <section id="kontakt" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-mountain-dark mb-2">Zostaw kontakt — oddzwonimy</h2>
-                    <p class="text-slate-500">
-                        Masz pytania? Chcesz wstępnie zadeklarować chęć zapisu dziecka?
-                    </p>
-                </div>
 
-                <form id="contactForm" action="https://formspree.io/f/mkgddldg" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-bold text-slate-700 mb-2">Imię i Nazwisko
-                            Rodzica</label>
-                        <input type="text" id="name" name="name" required
-                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-mountain-dark focus:ring-2 focus:ring-mountain-dark/20 outline-none transition"
-                            placeholder="np. Anna Nowak">
-                    </div>
-
-                    <div>
-                        <label for="contact" class="block text-sm font-bold text-slate-700 mb-2">Telefon lub
-                            E-mail</label>
-                        <input type="text" id="contact" name="contact" required
-                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-mountain-dark focus:ring-2 focus:ring-mountain-dark/20 outline-none transition"
-                            placeholder="np. 500 123 456">
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="child_year" class="block text-sm font-bold text-slate-700 mb-2">Rocznik
-                                Dziecka</label>
-                            <select id="child_year" name="child_year"
-                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-mountain-dark focus:ring-2 focus:ring-mountain-dark/20 outline-none transition bg-white">
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="inny">Inny</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="location"
-                                class="block text-sm font-bold text-slate-700 mb-2">Miejscowość</label>
-                            <select id="location" name="location"
-                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-mountain-dark focus:ring-2 focus:ring-mountain-dark/20 outline-none transition bg-white text-base md:text-lg cursor-pointer">
-                                <option value="Lesnica">Brenna Leśnica</option>
-                                <option value="Gorki">Górki</option>
-                                <option value="Bcentrum">Brenna Centrum</option>
-                                <option value="Inne">Inna</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- GDPR Checkbox -->
-                    <div class="flex items-start gap-3">
-                        <div class="flex items-center h-5">
-                            <input id="gdpr_consent" name="gdpr_consent" type="checkbox" required
-                                class="w-4 h-4 text-mountain-green border-gray-300 rounded focus:ring-mountain-dark focus:ring-2">
-                        </div>
-                        <label for="gdpr_consent" class="text-xs text-slate-500">
-                            Wyrażam zgodę na przetwarzanie moich danych osobowych do celów kontaktowych.
-                        </label>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full bg-mountain-green hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-lg">
-                        Wyślij zgłoszenie
-                    </button>
-
-                    <div id="form-success-message"
-                        class="hidden mt-4 bg-green-50 text-green-800 p-4 rounded-xl text-center border border-green-200">
-                        <p class="font-bold">Dziękujemy! Twoje zgłoszenie zostało przyjęte.</p>
-                        <p class="text-sm">Nasz koordynator odezwie się wkrótce.</p>
-                    </div>
-                </form>
-
-                <div class="mt-12 pt-8 border-t border-slate-100 text-center">
-                    <p class="font-bold text-slate-700 mb-2">Masz szybkie pytanie?</p>
-                    <div class="flex flex-col md:flex-row justify-center gap-4 text-sm">
-                        <a href="tel:338536278"
-                            class="flex items-center justify-center gap-2 text-slate-500 hover:text-mountain-dark transition bg-slate-50 px-4 py-2 rounded-lg">
-                            📞 33 853 62 78
-                        </a>
-                        <a href="mailto:sekretariat.lesnica@sp1.brenna.org.pl"
-                            class="flex items-center justify-center gap-2 text-slate-500 hover:text-mountain-dark transition bg-slate-50 px-4 py-2 rounded-lg">
-                            📧 sekretariat.lesnica@sp1.brenna.org.pl
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- FAQ – najczęstsze pytania -->
     <section id="faq" class="py-20 bg-white" x-data="{ active: null }">
@@ -1029,9 +940,9 @@
 
             <div class="text-center mt-10">
                 <p class="text-slate-500 mb-4">Masz inne pytanie?</p>
-                <a href="#kontakt"
+                <a href="kontakt"
                     class="btn-secondary inline-block border-2 border-mountain-dark text-mountain-dark font-bold py-3 px-8 rounded-full hover:bg-mountain-dark hover:text-white transition">
-                    Zostaw deklarację zainteresowania
+                    Przejdź do kontaktu
                 </a>
             </div>
         </div>
